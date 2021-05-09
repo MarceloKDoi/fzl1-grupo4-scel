@@ -36,5 +36,31 @@ class REQ001 {
 		
 		
 	}
-
+	
+	@Test
+	void ct03_cadastra_livro_com_isbn_em_branco()	{
+		
+		Biblioteca biblioteca = new Biblioteca();
+		Livro umLivro = new Livro("", "Engenharia de Software", "Pressman");
+		biblioteca.save(umLivro);
+		
+	}
+	
+	@Test
+	void ct04_cadastra_livro_com_titulo_em_branco() {
+		
+		Biblioteca biblioteca = new Biblioteca();
+		Livro umLivro = new Livro("1111", "", "Pressman");
+		biblioteca.save(umLivro);
+		
+	}
+	
+	@Test
+	void ct05_cadastra_livro_com_autor_em_branco() {
+		
+		Biblioteca biblioteca = new Biblioteca();
+		Livro umLivro = new Livro("1111", "Engenharia de Software", "");
+		biblioteca.save(umLivro);
+		
+	}
 }

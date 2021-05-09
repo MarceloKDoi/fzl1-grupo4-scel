@@ -18,10 +18,28 @@ public class Biblioteca {
 	}
 
 	public void save(Livro livro) {
-		if (!isbnSearch(livro.getIsbn())) {
-			livros.add(livro);
+		if (!livro.getIsbn().equals("")) {
+
+			if (!livro.getTitulo().equals("")) {
+
+				if (!livro.getAutor().equals("")) {
+
+					if (!isbnSearch(livro.getIsbn())) {
+						livros.add(livro);
+					}
+
+					else {
+						JOptionPane.showMessageDialog(null, "ISNB existente");
+					}
+				} else {
+					JOptionPane.showMessageDialog(null, "Preencha o campo com nome de autor valido");
+				}
+			} else {
+				JOptionPane.showMessageDialog(null, "Preencha o campo com nome de titulo valido");
+			}
 		} else {
-			JOptionPane.showMessageDialog(null, "ISNB existente");
+			JOptionPane.showMessageDialog(null, "Preencha o campo ISBN com 4 caracteres");
+
 		}
 
 	}
